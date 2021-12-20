@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+
+    <data>
+
+
+        <menuitem id="menu_root_biblioteca"  name="Biblioteca" sequence="30" />
+        <menuitem id="menu_root_biblioteca_libro_view"  name="Libros" parent="menu_root_biblioteca"/>
+
+
+        <record model="ir.actions.act_window" id="listar_libro_action">
+
+            <field name="name">Biblioteca</field>
+            <field name="res_model">biblioteca.libro</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+
+        <menuitem id="menu_root_biblioteca_listar_libro"  name="Listar libros" parent="menu_root_biblioteca_libro_view" action="listar_libro_action" />
+
+
+        <record model="ir.ui.view" id="view_biblioteca_libro_tree">
+
+            <field name="name">view.biblioteca.libro.tree</field>
+            <field name="model">biblioteca.libro</field>
+            <field name="arch" type="xml">
+
+                <tree string="Idea list">
+                    <field name="name"/>
+                    <field name="date"/>
+
+                </tree>
+
+            </field>
+
+        </record>
+
+
+
+        <record model="ir.ui.view" id="view_biblioteca_libro _form">
+
+            <field name='name'>view.biblioteca.libro.form</field>
+            <field name="model">biblioteca.libro</field>
+            <field name="arch" type="xml">
+
+                <form string="libro form" version="7.0">
+
+                    <sheet>
+
+                        <group colspan="2" col="2">
+                            <group>                               
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                            </group>
+
+                        </group>
+
+                        <notebook colspan="4">
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+
+                        </notebook>
+
+                    </sheet>
+
+                </form>
+
+            </field>
+
+        </record>
+
+ <record model="ir.ui.view" id="view_biblioteca_autor_tree">
+
+            <field name="name">view.biblioteca.autor.tree</field>
+            <field name="model">biblioteca.autor</field>
+            <field name="arch" type="xml">
+
+                <tree string="Idea list">
+                    <field name="nombre"/>
+                    <field name="primer_apellido"/>
+                     <field name="segundo_apellido"/>
+                      <field name="edad"/>
+                       <field name="fecha_nacimiento"/>
+                        <field name="genero"/>
+                         <field name="nacionalidad"/>
+
+                </tree>
+
+            </field>
+
+        </record>
+
+
+
+        <record model="ir.ui.view" id="view_biblioteca_autor_form">
+
+            <field name='name'>view.biblioteca.autor.form</field>
+            <field name="model">biblioteca.autor</field>
+            <field name="arch" type="xml">
+
+                <form string="autor form" version="7.0">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <group>                               
+                                <field name="nombre"/>
+                            </group>
+                            <group>
+                                <field name="primer_apellido"/>
+                            </group>
+                             <group>
+                                <field name="segundo_apellido"/>
+                            </group>
+                             <group>
+                                <field name="edad"/>
+                            </group>
+                             <group>
+                                <field name="fecha_nacimiento"/>
+                            </group>
+                             <group>
+                                <field name="genero"/>
+                            </group>
+                             <group>
+                                <field name="nacionalidad"/>
+                            </group>
+
+                        </group>
+
+                    </sheet>
+
+                </form>
+
+            </field>
+
+        </record>
+
+ 
+
+
+
+    </data>
+
+</openerp>
